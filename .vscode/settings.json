@@ -1,0 +1,7 @@
+{
+    "objectscript.conn": {
+        "server": "iris25comm",
+        "ns": "INTEROPCONTEST",
+        "active": true
+    }
+}

@@ -1,0 +1,178 @@
+<csp:class description="Fhir to ccda viewer" name="FhirToCcdaViewer" type="page" version="1.0">
+<html>
+<head>
+    <title>FHIR to CCDA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .textarea {
+            width: 48%;
+            height: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            line-height: 1.5;
+            resize: none;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-color: #0078d7;
+            box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0078d7;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .Listboxes {
+            text-align: center; 
+            margin-left: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">FHIR to CCDA</div>
+    <div class="listboxes">
+        <select style="padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="3.0.2">3.0.2</option>
+            <option value="4.0.1">4.0.1</option>
+            <option value="5.0.0">5.0.0</option>
+        </select>
+        <select style="padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="CCDAv21">CCDAv21</option>
+            <option value="CCDA">CCDA</option>
+        </select>
+    </div>
+    <div class="container">
+        <textarea class="textarea" placeholder="Enter FHIR data here..."></textarea>
+        <textarea class="textarea" placeholder="CCDA output will appear here..."></textarea>
+    </div>
+    <div style="text-align: center; margin-top: 20px; gap:10px">
+        <button id='Convert' style="padding: 10px 20px; font-size: 16px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;">Convert</button>
+        <button id='ViewCCDAHTML' style="padding: 10px 20px; font-size: 16px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;display:none;">ViewHTML</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const convertButton = document.getElementById("Convert");
+            const ccdahtmlButton = document.getElementById("ViewCCDAHTML");
+            const fhirTextarea = document.querySelector("textarea[placeholder='Enter FHIR data here...']");
+            const ccdaTextarea = document.querySelector("textarea[placeholder='CCDA output will appear here...']");
+            const fhirSelect = document.querySelector(".listboxes select:nth-child(1)");
+            const ccdaSelect = document.querySelector(".listboxes select:nth-child(2)");
+
+            const prettyPrintXml = (xml) => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xml, "application/xml");
+                const serializer = new XMLSerializer();
+                const prettyXml = serializer.serializeToString(xmlDoc);
+                return prettyXml.replace(/(>)(<)(\/*)/g, '$1\n$2$3').replace(/\n\s*\n/g, '\n');
+            };
+
+            convertButton.addEventListener("click", async function() {
+                ccdahtmlButton.style.display = "none";
+                convertButton.disabled = true;
+                convertButton.textContent = "Converting...";
+
+                const fhirData = fhirTextarea.value;
+                const selectedFhirVersion = fhirSelect.value;
+                const selectedCcdaVersion = ccdaSelect.value;
+
+                if (!fhirData.trim()) {
+                    alert("Please enter FHIR data before converting.");
+                    convertButton.disabled = false;
+                    convertButton.textContent = "Convert";
+                    return;
+                }
+
+                try {
+                    const url='/iris25comm/csp/interopcontest/fhirreceiver/fhirToCcdaRequest/'.concat(selectedFhirVersion,'/',selectedCcdaVersion);
+                    const response = await fetch(url, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": "Basic " + btoa("_System:SYS")
+                        },
+                        body: fhirTextarea.value
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to convert FHIR to CCDA.");
+                    }
+
+                    const result = await response.text();
+                    ccdaTextarea.value = prettyPrintXml(result);
+                    ccdahtmlButton.style.display = "inline";
+                } catch (error) {
+                    alert("Error: " + error.message);
+                } finally {
+                    convertButton.disabled = false;
+                    convertButton.textContent = "Convert";
+                }
+            });
+
+            ccdahtmlButton.addEventListener("click", async function() {
+                const fhirData = fhirTextarea.value;
+                const selectedFhirVersion = fhirSelect.value;
+                const selectedCcdaVersion = ccdaSelect.value;
+
+                if (!fhirData.trim()) {
+                    alert("Please enter FHIR data before viewing HTML.");
+                    return;
+                }
+
+                try {
+                    const url = '/iris25comm/csp/interopcontest/fhirreceiver/fhirToCcdaHtml/'.concat(selectedFhirVersion, '/', selectedCcdaVersion);
+                    const response = await fetch(url, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": "Basic " + btoa("_System:SYS")
+                        },
+                        body: fhirTextarea.value
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch CCDA HTML.");
+                    }
+
+                    const htmlContent = await response.text();
+                    const newWindow = window.open("", "_blank");
+                    newWindow.document.write(htmlContent);
+                    newWindow.document.close();
+                } catch (error) {
+                    alert("Error: " + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
