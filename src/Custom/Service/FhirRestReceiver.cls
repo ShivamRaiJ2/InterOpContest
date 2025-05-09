@@ -35,10 +35,23 @@ ClassMethod InvokeFhirToCCDA(fhirversion As %String = "4.0.1", ccdaversion As %S
 
 ClassMethod ConvertCcdToHtml(ccdaversion As %String = "CCDAv21") As %Status
 {
-    Set tHTMLStream=##class(HS.SDA3.QuickStream).%New()
-    Set tTransform=##class(HS.Util.XSLTTransformer).%New()
-    Set tSC=tTransform.Transform(%request.Content, "SDA3/CDA-Support-Files/Reports/"_ccdaversion_"-to-HTML.xsl", .tHTMLStream)
-    Write tHTMLStream.Read(),!
+   #Dim tRes As Custom.Response.CcdaResponse
+    // Create request for business service
+    Set tReq=##class(Custom.Request.CcdaRequest).%New()
+    Set tReq.CCDAVersion = ccdaversion
+
+    Set tStream=##class(HS.SDA3.QuickStream).%New()
+    Set tSC=tStream.CopyFrom(%request.Content)
+
+    Set tReq.CcdaRequestId=tStream.%Id()
+
+    // Create business service object and call process input
+    Set tSC = ##class(Ens.Director).CreateBusinessService("CcdaReceiver",.tService)
+    Set tSC = tService.OnProcessInput(tReq,.tRes)
+
+    set tHtmlStream=##class(HS.SDA3.QuickStream).%OpenId(tRes.CcdaQuickStreamID)
+
+    Write tHtmlStream.Read(),!
     Quit tSC
 }
 
