@@ -17,8 +17,8 @@ Method OnRequest(pRequest As Custom.Request.FhirRestRequest, Output pResponse As
         // Create a new stream to hold the SDA
         set tQuickStream=##class(HS.SDA3.QuickStream).%New()
         $$$ThrowOnError(tSDA3Object.XMLExportToStream(tQuickStream))
-        $$$LOGINFO(tQuickStream.Read())  
-        Do tQuickStream.Rewind()
+        //$$$LOGINFO(tQuickStream.Read())  
+        //Do tQuickStream.Rewind()
 
         // Make request for CCDA transformation
         set tSDARequest=##class(Custom.Request.SdaToCcdaRequest).%New()

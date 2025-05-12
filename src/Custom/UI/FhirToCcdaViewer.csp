@@ -1,7 +1,7 @@
 <csp:class description="Fhir to ccda viewer" name="FhirToCcdaViewer" type="page" version="1.0">
 <html>
 <head>
-    <title>FHIR to CCDA</title>
+    <title>FHIR Bundle to CCDA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-    <div class="header">FHIR to CCDA</div>
+    <div class="header">FHIR Bundle to CCDA</div>
     <div class="listboxes">
         <select style="padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
             <option value="3.0.2">3.0.2</option>
@@ -110,6 +110,8 @@
                     alert("Please enter FHIR data before converting.");
                     convertButton.disabled = false;
                     convertButton.textContent = "Convert";
+                    ccdaTextarea.value = '';
+                    ccdahtmlButton.style.display = "none";
                     return;
                 }
 
@@ -125,6 +127,7 @@
                     });
 
                     if (!response.ok) {
+                        ccdaTextarea.value = '';
                         throw new Error("Failed to convert FHIR to CCDA.");
                     }
 
@@ -140,28 +143,28 @@
             });
 
             ccdahtmlButton.addEventListener("click", async function() {
-                const fhirData = fhirTextarea.value;
-                const selectedFhirVersion = fhirSelect.value;
+                const ccdData = ccdaTextarea.value;
                 const selectedCcdaVersion = ccdaSelect.value;
 
-                if (!fhirData.trim()) {
-                    alert("Please enter FHIR data before viewing HTML.");
+                if (!ccdData.trim()) {
+                    alert("Please convert FHIR data before viewing HTML.");
+                    ccdahtmlButton.style.display = "none";
                     return;
                 }
 
                 try {
-                    const url = '/iris25comm/csp/interopcontest/fhirreceiver/fhirToCcdaHtml/'.concat(selectedFhirVersion, '/', selectedCcdaVersion);
+                    const url = '/iris25comm/csp/interopcontest/fhirreceiver/ccdaToHtml/'.concat(selectedCcdaVersion);
                     const response = await fetch(url, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
                             "Authorization": "Basic " + btoa("_System:SYS")
                         },
-                        body: fhirTextarea.value
+                        body: ccdaTextarea.value
                     });
 
                     if (!response.ok) {
-                        throw new Error("Failed to fetch CCDA HTML.");
+                        throw new Error("Failed to build CCDA HTML.");
                     }
 
                     const htmlContent = await response.text();
