@@ -1,0 +1,103 @@
+ROUTINE %ZBootstrap
+
+ Write "Starting bootstrap process",!
+ Write "For Setup press 1, Note it is a one time process",!
+ Write "For installing namespace only press 2",!
+ Write "For installing webapp only press 3",!
+ Read choice,!
+ If choice = 1 {
+  Write "Running setup",!
+  Do setup()
+ } ElseIf choice =2 {
+   Write "Installing namespace",!
+   Write "Enter Namespace to install",!
+   Read namespace,!
+   If namespace = "" {
+     Write "No namespace provided, exiting"
+     Quit
+   } Else {
+        Write "Installing namespace ",namespace,!
+        Do installnamespace(namespace)
+        Write "Namespace ",namespace," created"
+   }
+ }ElseIf choice =3 {
+   Write "Installing webapp",!
+   Write "Enter Namespace for which webapp needs to install",!
+   Read namespace,!
+   If namespace = "" {
+     Write "No namespace provided, exiting"
+     Quit
+   } Else {
+        Write "Installing fhir rest receiver web app for  ",namespace,!
+        Do installwebapp(namespace)
+        Write "Fhir web app create for  ",namespace," created"
+   }
+ }Else {
+    Write "Test",!
+    Do Test()
+ }
+
+ Return ;End routine
+#include %occInclude
+setup() public { ##; one time initialization
+
+ #; install the namespace
+ Do installnamespace("INTEROPCONTEST")
+ 
+ #; import all the files for src provide location
+ New $NAMESPACE
+ Set $NAMESPACE = "INTEROPCONTEST"
+ Write !,"Enter Directory Path where you have cloned repository",!
+ Read directorypath,!
+ If directorypath = "" {
+  Write "No directory path provided, exiting"
+  Quit
+ }
+ Write "Importing code from ",directorypath,!
+ Set tSC=##class(%SYSTEM.OBJ).Import(directorypath,"ck",)
+ If $$$ISERR(tSC) {
+  Write "Error importing code from ",directorypath,!
+  Quit
+ }
+ Write "Code imported from ",directorypath,!
+
+ Write "Starting Production ",!
+ Set tSC=##class(Ens.Director).StartProduction("INTEROPCONTESTPKG.FoundationProduction")
+
+ do installwebapp($NAMESPACE)
+ 
+ Write "Set up completed successfully",!
+
+}
+
+installnamespace(namespace) public { ##; install a namespace
+ New $NAMESPACE
+ Set $NAMESPACE = "HSCUSTOM"
+ Write "Creating namespace", namespace,!
+ $$$ThrowOnError(##class(HS.Util.Installer.Foundation).Install(namespace))
+ Write "Namespace ",namespace," created"
+}
+
+installwebapp(namespace) public { ##; install web app
+ SET $NAMESPACE="%SYS"
+ #; Create a webapplication for rest service
+ Set Prop("Name")="/csp/"_$ZCVT(namespace,"L")_"/fhirreceiver"
+ Set Prop("NameSpace")=namespace
+ Set Prop("Description")="FHIR REST Receiver"
+ Set Prop("Enabled")=1
+ Set Prop("DispatchClass")="Custom.Service.FhirRestReceiver"
+ Set Prop("IsNameSpaceDefault")=0
+ Set Prop("AutheEnabled")=1+2**5
+
+ Set tSC = ##class(Security.Applications).Create(Prop("Name"),.Prop)
+ If $$$ISERR(tSC) {
+  Write "Error creating fhir webapp ",!
+  Quit
+ }
+ Write "Created fhir web app ",!
+
+}
+
+Test() public{
+ Write "Works!!!",!
+}

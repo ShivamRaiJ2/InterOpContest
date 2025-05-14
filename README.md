@@ -28,15 +28,33 @@ InterOpContest is a comprehensive project designed to facilitate interoperabilit
 
 ## Use Cases
 - Healthcare organizations can use this project to convert and visualize clinical data.
-- Developers can integrate the provided REST APIs into their applications for seamless data interoperability.
+- Developers can integrate the provided REST APIs into their applications for seamless data interoperability for FHIR bundle to CCDA
 - Researchers can leverage the tools for analyzing and transforming healthcare data.
 
 ## Getting Started
 1. Clone the repository.
-2. Set up the required environment and dependencies.
-3. Explore the `src/Custom/` directory for core functionality and `iris25comm/` for transformation resources.
-4. Use the provided UI components or REST APIs to interact with the system.
+2. Set up the required environment (IRIS for Health should be installed)
+3. Open terminal, note: Intersystems Lite terminal on VS code have issues thus please use normal terminal
+3. Import %ZBootstrap.mac file in the environment in %SYS namespace by using below command:
+   w $System.OBJ.Import("<cloned repo path>\%ZBootstrap.mac","cuk")
 
-## Contributions
-Contributions are welcome! Please follow the guidelines in the `CONTRIBUTING.md` file (if available) to submit issues or pull requests.
+4. Run below command to invoke the setup.
+    do ^%ZBootstrap
+    -- Choose 1 for complete setup 
+    -- Once namespace is installed you will be prompted to enter src path on terminal 
+   ![alt text](image.png)
+    -- once file are imported it will automatically create the webapp
+
+5. Now you are ready to go (note: i am using _SYSTEM:SYS as username password )
+   
+   API can be invoked from postman
+
+   ![alt text](image-1.png)
+
+   For using the UI application use link as below:
+   <local ip and port>/iris25comm/csp/healthshare/interopcontest/FhirToCcdaViewer.csp
+
+    ![alt text](image-2.png)
+
+
 

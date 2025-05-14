@@ -7,6 +7,4 @@ run text eol=lf
 *.mac text eol=lf
 *.int text eol=lf
 *.csp text eol=lf
-
-# ensure mock cda files don't use CRLF on windows and throw off XDS size/hash
 *.xml text eol=lf
