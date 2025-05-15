@@ -1,3 +1,4 @@
 # ignore below files and directories
 
 .personal
+.vscode
