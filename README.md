@@ -20,15 +20,10 @@ InterOpContest is a comprehensive project designed to facilitate interoperabilit
   - **Response/**: Classes for generating responses.
   - **Service/**: Services for receiving and processing data.
   - **UI/**: User interface components, such as the FHIR to CCDA viewer.
-- **iris25comm/**: Contains XSLT stylesheets and other resources for data transformation.
-  - **FHIR/**: Stylesheets for formatting FHIR data.
-  - **SDA3/**: Stylesheets for SDA transformations.
-  - **IHE/**: Stylesheets for IHE (Integrating the Healthcare Enterprise) profiles.
-- **csp/healthshare/interopcontest/**: Contains additional UI components and JavaScript files for the project.
 
 ## Use Cases
-- Healthcare organizations can use this project to convert and visualize clinical data.
-- Developers can integrate the provided REST APIs into their applications for seamless data interoperability for FHIR bundle to CCDA
+- Healthcare organizations can use this project to convert FHIR bundle json and visualize clinical data in html format.
+- Developers can integrate the provided REST APIs into their applications for seamless data interoperability for FHIR bundle to CCDA.
 - Researchers can leverage the tools for analyzing and transforming healthcare data.
 
 ## Getting Started
@@ -36,13 +31,17 @@ InterOpContest is a comprehensive project designed to facilitate interoperabilit
 2. Set up the required environment (IRIS for Health should be installed)
 3. Open terminal, note: Intersystems Lite terminal on VS code have issues thus please use normal terminal
 3. Import %ZBootstrap.mac file in the environment in %SYS namespace by using below command:
-   w $System.OBJ.Import("<cloned repo path>\%ZBootstrap.mac","cuk")
+
+   w $System.OBJ.Import("cloned repo path\%ZBootstrap.mac","cuk")
 
 4. Run below command to invoke the setup.
     do ^%ZBootstrap
+
     -- Choose 1 for complete setup 
     -- Once namespace is installed you will be prompted to enter src path on terminal 
+
    ![alt text](image.png)
+
     -- once file are imported it will automatically create the webapp
 
 5. Now you are ready to go (note: i am using _SYSTEM:SYS as username password )
@@ -52,7 +51,7 @@ InterOpContest is a comprehensive project designed to facilitate interoperabilit
    ![alt text](image-1.png)
 
    For using the UI application use link as below:
-   <local ip and port>/iris25comm/csp/healthshare/interopcontest/FhirToCcdaViewer.csp
+   ip:port/webprefix/csp/healthshare/interopcontest/FhirToCcdaViewer.csp
 
     ![alt text](image-2.png)
 

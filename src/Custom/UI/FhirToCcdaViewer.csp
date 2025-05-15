@@ -74,7 +74,7 @@
     </div>
     <div class="container">
         <textarea class="textarea" placeholder="Enter FHIR data here..."></textarea>
-        <textarea class="textarea" placeholder="CCDA output will appear here..."></textarea>
+        <textarea class="textarea" placeholder="CCDA output will appear here..." readonly></textarea>
     </div>
     <div style="text-align: center; margin-top: 20px; gap:10px">
         <button id='Convert' style="padding: 10px 20px; font-size: 16px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;">Convert</button>
@@ -116,7 +116,10 @@
                 }
 
                 try {
-                    const url='/iris25comm/csp/interopcontest/fhirreceiver/fhirToCcdaRequest/'.concat(selectedFhirVersion,'/',selectedCcdaVersion);
+                    
+                    const instancewebprefix = '/'.concat(window.location.href.split('/')[3]);
+                    // alert(instancewebprefix);
+                    const url=instancewebprefix.concat('/csp/interopcontest/fhirreceiver/fhirToCcdaRequest/',selectedFhirVersion,'/',selectedCcdaVersion);
                     const response = await fetch(url, {
                         method: "POST",
                         headers: {
@@ -153,7 +156,8 @@
                 }
 
                 try {
-                    const url = '/iris25comm/csp/interopcontest/fhirreceiver/ccdaToHtml/'.concat(selectedCcdaVersion);
+                    const instancewebprefix = '/'.concat(window.location.href.split('/')[3]);
+                    const url = instancewebprefix.concat('/csp/interopcontest/fhirreceiver/ccdaToHtml/',selectedCcdaVersion);
                     const response = await fetch(url, {
                         method: "POST",
                         headers: {
