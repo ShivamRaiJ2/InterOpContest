@@ -1,7 +1,7 @@
 # InterOpContest
 
 ## Overview
-InterOpContest is a comprehensive project designed to facilitate interoperability between various healthcare data standards and formats. The project provides tools and services for converting, processing, and visualizing healthcare data, ensuring seamless integration and communication between different systems.
+InterOpContest(FHIR Bundle To CCDA) is a comprehensive project designed to facilitate interoperability between various healthcare data standards and formats. The project provides tools and services for converting, processing, and visualizing healthcare data, ensuring seamless integration and communication between different systems.
 
 ## Key Features
 - **FHIR to CCDA Conversion**: Tools to convert FHIR (Fast Healthcare Interoperability Resources) data to CCDA (Consolidated Clinical Document Architecture) format.
@@ -54,6 +54,30 @@ InterOpContest is a comprehensive project designed to facilitate interoperabilit
    ip:port/webprefix/csp/healthshare/interopcontest/FhirToCcdaViewer.csp
 
     ![alt text](image-2.png)
+
+6. This project does use interoperability components which could be found in the production page and messages can be explored with Visual trace:
+
+    ![alt text](image-3.png)
+
+    ![alt text](image-4.png)
+
+## sample testing
+
+1. To perform a quick testing, use sample-test-patient.json.
+
+2. Open application using below link:
+
+ip:port/webprefix/csp/healthshare/interopcontest/FhirToCcdaViewer.csp
+
+3. Copy the content, and paste it on text area for FHIR data. Choose version as 4.0.1 (This is essential as conversion will fail for 3.0.2)
+
+![alt text](image-5.png)
+
+4. After converting click on viewHTML to have a look at comprehensive data.
+
+![alt text](image-6.png)
+
+
 
 
 

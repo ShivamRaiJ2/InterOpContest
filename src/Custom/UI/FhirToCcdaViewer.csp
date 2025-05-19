@@ -80,6 +80,9 @@
         <button id='Convert' style="padding: 10px 20px; font-size: 16px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;">Convert</button>
         <button id='ViewCCDAHTML' style="padding: 10px 20px; font-size: 16px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;display:none;">ViewHTML</button>
     </div>
+    <div style="text-align: center; margin-top: 10px; color: red; font-size: 16px;">
+        <label id="warninglbl" style="display:none;">Warning: This conversion is not guaranteed to be accurate. Please verify the output before using it in a production environment or clinical research and it may require additional customization to meet specific needs.</label>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const convertButton = document.getElementById("Convert");
@@ -88,6 +91,7 @@
             const ccdaTextarea = document.querySelector("textarea[placeholder='CCDA output will appear here...']");
             const fhirSelect = document.querySelector(".listboxes select:nth-child(1)");
             const ccdaSelect = document.querySelector(".listboxes select:nth-child(2)");
+            const warninglabel = document.getElementById("warninglbl");
 
             const prettyPrintXml = (xml) => {
                 const parser = new DOMParser();
@@ -101,6 +105,7 @@
                 ccdahtmlButton.style.display = "none";
                 convertButton.disabled = true;
                 convertButton.textContent = "Converting...";
+                warninglabel.style.display = "inline";
 
                 const fhirData = fhirTextarea.value;
                 const selectedFhirVersion = fhirSelect.value;
@@ -112,6 +117,7 @@
                     convertButton.textContent = "Convert";
                     ccdaTextarea.value = '';
                     ccdahtmlButton.style.display = "none";
+                    warninglabel.style.display = "none";
                     return;
                 }
 

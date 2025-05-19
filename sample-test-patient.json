@@ -1,0 +1,2648 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:dd20e651-61a6-45af-964e-cbbe54e459e2",
+            "resource": {
+                "resourceType": "Practitioner",
+                "address": [
+                    {
+                        "city": "Portland",
+                        "country": "US",
+                        "line": [
+                            "1004 Healthcare Drive"
+                        ],
+                        "postalCode": "99123",
+                        "state": "OR"
+                    }
+                ],
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-family-doctor-description",
+                        "valueString": "Primary, Patricia Patty"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "5555555555"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Primary",
+                        "given": [
+                            "Patricia",
+                            "Patty"
+                        ],
+                        "suffix": [
+                            "M.D."
+                        ],
+                        "text": "Patricia Patty Primary M.D.",
+                        "use": "official"
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "use": "work",
+                        "value": "+1(555)555-1004"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:980087a9-33ca-41ad-b056-105f9ccb95b8",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "value": "1.3.6.1.4.1.16517.1"
+                    }
+                ],
+                "name": "1.3.6.1.4.1.16517.1"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:3f545ee2-7019-4ed4-baec-91aaf64dcd3c",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "value": "SSN"
+                    }
+                ],
+                "name": "Social Security Administration"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "RelatedPerson"
+            },
+            "fullUrl": "urn:uuid:46870fb8-27cf-4e47-8025-17042271228a",
+            "resource": {
+                "resourceType": "RelatedPerson",
+                "address": [
+                    {
+                        "city": "Beaverton",
+                        "country": "US",
+                        "line": [
+                            "2222 Home Street"
+                        ],
+                        "postalCode": "97867",
+                        "state": "OR"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Jones",
+                        "given": [
+                            "Boris",
+                            "Bo"
+                        ],
+                        "text": "Boris Bo Jones",
+                        "use": "official"
+                    }
+                ],
+                "patient": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "relationship": [
+                    {
+                        "coding": [
+                            {
+                                "code": "N",
+                                "display": "Next-of-Kin"
+                            }
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "use": "mobile",
+                        "value": "+1(555)555-2008"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "RelatedPerson"
+            },
+            "fullUrl": "urn:uuid:4fca0a33-df9b-4840-abdc-be55fdbcd8f3",
+            "resource": {
+                "resourceType": "RelatedPerson",
+                "address": [
+                    {
+                        "city": "Beaverton",
+                        "country": "US",
+                        "line": [
+                            "2222 Home Street"
+                        ],
+                        "postalCode": "97867",
+                        "state": "OR"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Jones",
+                        "given": [
+                            "Boris",
+                            "Bo"
+                        ],
+                        "text": "Boris Bo Jones",
+                        "use": "official"
+                    }
+                ],
+                "patient": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "relationship": [
+                    {
+                        "coding": [
+                            {
+                                "code": "C",
+                                "display": "Emergency Contact"
+                            }
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "use": "mobile",
+                        "value": "+1(555)555-2008"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "Patient/2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+            },
+            "fullUrl": "Patient/2ac77170-47c3-48d6-a22e-2cc67a11cc32",
+            "resource": {
+                "resourceType": "Patient",
+                "address": [
+                    {
+                        "city": "Beaverton",
+                        "country": "US",
+                        "line": [
+                            "4567 Residence Rd"
+                        ],
+                        "postalCode": "97867",
+                        "state": "OR"
+                    }
+                ],
+                "birthDate": "1950-12-19",
+                "communication": [
+                    {
+                        "language": {
+                            "coding": [
+                                {
+                                    "code": "eng"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "language": {
+                            "coding": [
+                                {
+                                    "code": "ita"
+                                }
+                            ]
+                        },
+                        "preferred": true
+                    }
+                ],
+                "contact": [
+                    {
+                        "address": {
+                            "city": "Beaverton",
+                            "country": "US",
+                            "line": [
+                                "2222 Home Street"
+                            ],
+                            "postalCode": "97867",
+                            "state": "OR"
+                        },
+                        "name": {
+                            "family": "Jones",
+                            "given": [
+                                "Boris",
+                                "Bo"
+                            ],
+                            "text": "Boris Bo Jones",
+                            "use": "official"
+                        },
+                        "relationship": [
+                            {
+                                "coding": [
+                                    {
+                                        "code": "N",
+                                        "system": "http://terminology.hl7.org/CodeSystem/v2-0131"
+                                    }
+                                ]
+                            },
+                            {
+                                "coding": [
+                                    {
+                                        "code": "N",
+                                        "display": "Next-of-Kin"
+                                    }
+                                ]
+                            }
+                        ],
+                        "telecom": [
+                            {
+                                "system": "phone",
+                                "use": "mobile",
+                                "value": "+1(555)555-2008"
+                            }
+                        ]
+                    },
+                    {
+                        "address": {
+                            "city": "Beaverton",
+                            "country": "US",
+                            "line": [
+                                "2222 Home Street"
+                            ],
+                            "postalCode": "97867",
+                            "state": "OR"
+                        },
+                        "name": {
+                            "family": "Jones",
+                            "given": [
+                                "Boris",
+                                "Bo"
+                            ],
+                            "text": "Boris Bo Jones",
+                            "use": "official"
+                        },
+                        "relationship": [
+                            {
+                                "coding": [
+                                    {
+                                        "code": "C",
+                                        "system": "http://terminology.hl7.org/CodeSystem/v2-0131"
+                                    }
+                                ]
+                            },
+                            {
+                                "coding": [
+                                    {
+                                        "code": "C",
+                                        "display": "Emergency Contact"
+                                    }
+                                ]
+                            }
+                        ],
+                        "telecom": [
+                            {
+                                "system": "phone",
+                                "use": "mobile",
+                                "value": "+1(555)555-2008"
+                            }
+                        ]
+                    }
+                ],
+                "extension": [
+                    {
+                        "extension": [
+                            {
+                                "url": "ombCategory",
+                                "valueCoding": {
+                                    "code": "2106-3",
+                                    "display": "White",
+                                    "system": "urn:oid:2.16.840.1.113883.6.238"
+                                }
+                            },
+                            {
+                                "url": "ombCategory",
+                                "valueCoding": {
+                                    "code": "2114-7",
+                                    "display": "Italian",
+                                    "system": "urn:oid:2.16.840.1.113883.6.238"
+                                }
+                            },
+                            {
+                                "url": "text",
+                                "valueString": "White, Italian"
+                            }
+                        ],
+                        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/patient-entered-by",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine",
+                                    "display": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/patient-entered-on",
+                        "valueDateTime": "2014-10-15T10:30:26+04:00"
+                    },
+                    {
+                        "extension": [
+                            {
+                                "url": "ombCategory",
+                                "valueCoding": {
+                                    "code": "2186-5",
+                                    "display": "Not Hispanic or Latino",
+                                    "system": "urn:oid:2.16.840.1.113883.6.238"
+                                }
+                            },
+                            {
+                                "url": "text",
+                                "valueString": "Not Hispanic or Latino"
+                            }
+                        ],
+                        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/patient-religion",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "1013",
+                                    "display": "Christian (non-Catholic, non-specific)",
+                                    "system": "urn:oid:2.16.840.1.113883.5.1076"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "gender": "female",
+                "generalPractitioner": [
+                    {
+                        "reference": "urn:uuid:dd20e651-61a6-45af-964e-cbbe54e459e2"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "assigner": {
+                            "reference": "urn:uuid:980087a9-33ca-41ad-b056-105f9ccb95b8"
+                        },
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "MR",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "MRN"
+                        },
+                        "value": "98765432"
+                    },
+                    {
+                        "assigner": {
+                            "reference": "urn:uuid:3f545ee2-7019-4ed4-baec-91aaf64dcd3c"
+                        },
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "SB",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "SSN"
+                        },
+                        "value": "12345679"
+                    }
+                ],
+                "link": [
+                    {
+                        "other": {
+                            "reference": "urn:uuid:46870fb8-27cf-4e47-8025-17042271228a"
+                        },
+                        "type": "seealso"
+                    },
+                    {
+                        "other": {
+                            "reference": "urn:uuid:4fca0a33-df9b-4840-abdc-be55fdbcd8f3"
+                        },
+                        "type": "seealso"
+                    }
+                ],
+                "maritalStatus": {
+                    "coding": [
+                        {
+                            "code": "M",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
+                        }
+                    ]
+                },
+                "name": [
+                    {
+                        "family": "Jones",
+                        "given": [
+                            "Isabella"
+                        ],
+                        "text": "Isabella Jones",
+                        "use": "official"
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "email",
+                        "value": "Isbella.Jones.CCD@gmail.com"
+                    },
+                    {
+                        "system": "phone",
+                        "use": "mobile",
+                        "value": "+1(444)444-4444"
+                    }
+                ],
+                "id": "2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "value": "Good Health Laboratory"
+                    }
+                ],
+                "name": "Good Health Laboratory"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            },
+            "fullUrl": "urn:uuid:cc398ab9-75ea-41b2-a49e-384b7e30936d",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "Unknown",
+                            "display": "No Known Allergies"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/allergy-allergy-category",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "OT",
+                                    "display": "Other"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/allergy-discovery-time",
+                        "valueDateTime": "2014-04-20T00:00:00+04:00"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/allergy-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    }
+                ],
+                "onsetDateTime": "2014-04-20T00:00:00+04:00",
+                "patient": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "reaction": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/allergy-severity",
+                                "valueCodeableConcept": {
+                                    "coding": [
+                                        {
+                                            "code": "U",
+                                            "display": "Unknown",
+                                            "extension": [
+                                                {
+                                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                                    "valueString": "HL7128"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "manifestation": [
+                            {
+                                "coding": [
+                                    {
+                                        "code": "Unknown",
+                                        "display": "Unknown"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:f1d5796e-9956-46c9-9a23-bc30f8ba81e0",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "social-history",
+                                "display": "Social History",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Social History"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "72166-2",
+                            "display": "Tobacco smoking status NHIS",
+                            "system": "http://loinc.org"
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "issued": "2014-10-01T10:30:26+04:00",
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:aaaead0d-e25f-4eba-9763-41efa03c0d5b",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "8480-6",
+                            "display": "Systolic blood pressure",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "mm[Hg]"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "mm[Hg]",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 120
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:793a1bfb-132d-43c0-9fe5-19f281ead3c4",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "8462-4",
+                            "display": "Diastolic blood pressure",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "mm[Hg]"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "mm[Hg]",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 80
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:9ea8e8f5-7c09-48db-921f-38b0a489765d",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "8867-4",
+                            "display": "Heart rate",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "/min"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "/min",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 80
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:582e99cb-6dee-4583-9dd4-792e61e23d7c",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "8310-5",
+                            "display": "Body temperature",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "Cel"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "Cel",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 37.2
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:0572f203-d883-454b-88ee-65b17b740525",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "9279-1",
+                            "display": "Respiratory rate",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "/min"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "/min",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 18
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:7cfdada5-ebdc-4b78-8bd2-c0e6e3826ef0",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "8302-2",
+                            "display": "Body height",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "cm"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "cm",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 170.2
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:ba59c303-b22a-4b25-b341-115d67bbf287",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "3141-9",
+                            "display": "WEIGHT",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "kg"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 108.863
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:d0a60ecb-c2aa-46f3-98dd-3df15048dcd0",
+            "resource": {
+                "resourceType": "Observation",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "39156-5",
+                            "display": "Body mass index (BMI) [Ratio]",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "kg/m2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "kg/m2",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 37.58
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:caac36ae-6f2c-4cc8-9393-d3b99b2ddda5",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "vital-signs",
+                                "display": "Vital Signs",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "2710-2",
+                            "display": "OXYGEN SATURATION",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-observation-observation-value-units",
+                            "valueCodeableConcept": {
+                                "coding": [
+                                    {
+                                        "code": "%"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-01T10:30:26+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/observation-entered-on",
+                        "valueDateTime": "2014-10-01T10:30:26+04:00"
+                    }
+                ],
+                "status": "unknown",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueQuantity": {
+                    "code": "%",
+                    "system": "http://unitsofmeasure.org",
+                    "value": 98
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Procedure"
+            },
+            "fullUrl": "urn:uuid:7c3b6d48-0fa2-48a0-ac8b-951df7f23e2b",
+            "resource": {
+                "resourceType": "Procedure",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "6025007",
+                            "display": "Laparoscopic appendectomy",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "44970",
+                            "display": "Laparoscopic Appendectomy",
+                            "system": "urn:oid:2.16.840.1.113883.6.12"
+                        },
+                        {
+                            "code": "0DTJ4ZZ",
+                            "display": "Resection of Appendix, Percutaneous Endoscopic Approach",
+                            "system": "http://www.icd10data.com/icd10pcs"
+                        },
+                        {
+                            "code": "47.01",
+                            "display": "Laparoscopic appendectomy",
+                            "system": "http://hl7.org/fhir/sid/icd-9-cm/procedure"
+                        }
+                    ],
+                    "text": "Laparoscopic appendectomy"
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/procedure-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/procedure-entered-by",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine",
+                                    "display": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "performedDateTime": "2014-10-02T10:30:26+04:00",
+                "status": "completed",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:176eb914-23cb-4edb-840a-7b9b61f08a06",
+            "resource": {
+                "resourceType": "Practitioner",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-description",
+                        "valueString": "TEST, Good"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-s-d-a-coding-standard",
+                                "valueString": "Good Health Laboratory"
+                            }
+                        ],
+                        "value": "00000001"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "TEST",
+                        "given": [
+                            "Good"
+                        ],
+                        "text": "Good TEST"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "ServiceRequest"
+            },
+            "fullUrl": "urn:uuid:81d2b6bc-a0f6-42c8-8a2e-153a95501a07",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "authoredOn": "2014-10-26T08:55:01+04:00",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "103693007",
+                                "display": "Diagnostic procedure",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ],
+                        "text": "Diagnostic procedure"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "85027",
+                            "display": "COMPLETE CBC AUTOMATED",
+                            "system": "urn:oid:2.16.840.1.113883.6.12"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-order-confidentiality-code",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "U",
+                                    "display": "Usual control"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-order-filler-assigning-authority",
+                        "valueString": "Good Health Laboratory"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-order-placer-assigning-authority",
+                        "valueString": "Good Health Laboratory"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-order-priority",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "ST",
+                                    "display": "ST"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-order-specimen-collected-time",
+                        "valueDateTime": "2014-10-26T08:55:01+04:00"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "OR210401515"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "OR210401515"
+                    }
+                ],
+                "intent": "order",
+                "requester": {
+                    "reference": "urn:uuid:176eb914-23cb-4edb-840a-7b9b61f08a06"
+                },
+                "status": "active",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:af5750e9-e8cc-44d2-8b45-9cfbfaf33efb",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-organization-s-d-a-coding-standard",
+                                "valueString": "Good Health Laboratory"
+                            }
+                        ],
+                        "value": "0001169"
+                    }
+                ],
+                "name": "Good Health Laboratory"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "fullUrl": "urn:uuid:defd3dc2-f8d4-46e1-adf9-24406805496d",
+            "resource": {
+                "resourceType": "Observation",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "85027",
+                            "display": "PDF-COMPLETE CBC AUTOMATED"
+                        }
+                    ],
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-lab-test-item-is-numeric",
+                            "valueBoolean": true
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-26T15:26:48+04:00",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/lab-result-item-observation-value-type",
+                        "valueString": "ED"
+                    }
+                ],
+                "performer": [
+                    {
+                        "reference": "urn:uuid:af5750e9-e8cc-44d2-8b45-9cfbfaf33efb"
+                    }
+                ],
+                "referenceRange": [
+                    {
+                        "high": {
+                            "value": 0
+                        },
+                        "low": {
+                            "value": 0
+                        },
+                        "text": "0-0"
+                    }
+                ],
+                "status": "amended",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "valueString": "Please see \"Documents\" section for results in PDF format"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "DiagnosticReport"
+            },
+            "fullUrl": "urn:uuid:31801378-bea4-48a1-a458-d2a457b198d9",
+            "resource": {
+                "resourceType": "DiagnosticReport",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:81d2b6bc-a0f6-42c8-8a2e-153a95501a07"
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "LAB",
+                                "display": "Laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+                            }
+                        ],
+                        "text": "Laboratory"
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "LAB",
+                                "display": "Laboratory",
+                                "extension": [
+                                    {
+                                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                        "valueString": "ORDERCATEGORY"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "85027",
+                            "display": "COMPLETE CBC AUTOMATED",
+                            "system": "urn:oid:2.16.840.1.113883.6.12"
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-10-26T08:55:01+04:00",
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "OR210401515"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "OR210401515"
+                    }
+                ],
+                "issued": "2014-10-26T09:28:35+04:00",
+                "performer": [
+                    {
+                        "reference": "urn:uuid:176eb914-23cb-4edb-840a-7b9b61f08a06"
+                    }
+                ],
+                "result": [
+                    {
+                        "reference": "urn:uuid:defd3dc2-f8d4-46e1-adf9-24406805496d"
+                    }
+                ],
+                "status": "corrected",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:7132fc2d-3dd9-415b-a984-8f84d1f97b65",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "value": "Good Health Laboratory/3625491"
+                    }
+                ],
+                "name": "Good Health Laboratory/3625491"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:1a4ba8fc-1353-4168-8543-e1054324483b",
+            "resource": {
+                "resourceType": "Organization",
+                "active": true,
+                "identifier": [
+                    {
+                        "value": "Good Health Laboratory"
+                    }
+                ],
+                "name": "Good Health Laboratory",
+                "partOf": {
+                    "reference": "urn:uuid:7132fc2d-3dd9-415b-a984-8f84d1f97b65"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:4e203056-1a2e-4aae-8d64-c51134e3070b",
+            "resource": {
+                "resourceType": "Practitioner",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-description",
+                        "valueString": "TEST, Good"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-s-d-a-coding-standard",
+                                "valueString": "Good Health Laboratory"
+                            }
+                        ],
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PROVID"
+                                }
+                            ]
+                        },
+                        "value": "120010"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "TEST",
+                        "given": [
+                            "Good"
+                        ],
+                        "text": "Good TEST"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "ServiceRequest"
+            },
+            "fullUrl": "urn:uuid:da1de10e-6077-4fac-b8b4-c85dfd81b06a",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "authoredOn": "2014-05-16T18:58:33+04:00",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "103693007",
+                                "display": "Diagnostic procedure",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ],
+                        "text": "Diagnostic procedure"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "73120",
+                            "display": "X-RAY RT HAND",
+                            "system": "urn:oid:2.16.840.1.113883.6.12"
+                        },
+                        {
+                            "display": "XR HAND 2 VW",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/prior-code-code-system",
+                                    "valueString": "X-RAY RT HAND"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-confidentiality-code",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "U",
+                                    "display": "Usual control"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-entering-organization",
+                        "valueReference": {
+                            "reference": "urn:uuid:1a4ba8fc-1353-4168-8543-e1054324483b"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-filler-assigning-authority",
+                        "valueString": "BRSHRAD^^"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-placer-assigning-authority",
+                        "valueString": "Good Health"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-priority",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "RT",
+                                    "display": "RT"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/rad-order-specimen-collected-time",
+                        "valueDateTime": "2014-05-16T18:58:33+04:00"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "E10265666"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "717224111"
+                    }
+                ],
+                "intent": "order",
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "code": "M79.644",
+                                "display": "Pain in right finger(s)",
+                                "system": "http://hl7.org/fhir/sid/icd-10"
+                            }
+                        ]
+                    }
+                ],
+                "requester": {
+                    "reference": "urn:uuid:4e203056-1a2e-4aae-8d64-c51134e3070b"
+                },
+                "status": "active",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "supportingInfo": [
+                    {
+                        "reference": "urn:uuid:1a4ba8fc-1353-4168-8543-e1054324483b"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "DiagnosticReport"
+            },
+            "fullUrl": "urn:uuid:6fe845b7-12f8-4324-973d-329bd3db2b87",
+            "resource": {
+                "resourceType": "DiagnosticReport",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:da1de10e-6077-4fac-b8b4-c85dfd81b06a"
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "RAD",
+                                "display": "Radiology",
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+                            }
+                        ],
+                        "text": "Radiology"
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "RAD",
+                                "display": "Medical Imaging",
+                                "extension": [
+                                    {
+                                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                        "valueString": "ORDERCATEGORY"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "LP29684-5",
+                                "display": "Radiology",
+                                "system": "http://loinc.org"
+                            }
+                        ],
+                        "text": "Radiology"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "73120",
+                            "display": "X-RAY RT HAND",
+                            "system": "urn:oid:2.16.840.1.113883.6.12"
+                        },
+                        {
+                            "display": "XR HAND 2 VW",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/prior-code-code-system",
+                                    "valueString": "X-RAY RT HAND"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "effectiveDateTime": "2014-05-16T17:12:42+04:00",
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "E10265666"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "717224111"
+                    }
+                ],
+                "issued": "2014-05-16T18:47:44+04:00",
+                "performer": [
+                    {
+                        "reference": "urn:uuid:4e203056-1a2e-4aae-8d64-c51134e3070b"
+                    }
+                ],
+                "presentedForm": [
+                    {
+                        "contentType": "text/plain",
+                        "data": "Q2xpbmljYWwgSW5mb3JtYXRpb24gQ2xpbmljYWwgQ29tbWVudHM6LT5jL28gNHRoIGZpbmdlciBwYWluICwgaHggb2YgdHJhdW1hICAgIFByb3YuIERpYWcuOi4uICBDb3ZpZDE5IE5PVCBTdXNwZWN0ZWQgQ2xpbmljYWxseQ==",
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/result-authorization-time",
+                                "valueDateTime": "2014-05-16T18:47:44+04:00"
+                            },
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/result-result-status",
+                                "valueString": "F"
+                            },
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/result-result-type",
+                                "valueString": "IM"
+                            }
+                        ]
+                    }
+                ],
+                "status": "final",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Medication"
+            },
+            "fullUrl": "urn:uuid:ba75ad3c-d71d-43da-b635-3ce1f739d5fc",
+            "resource": {
+                "resourceType": "Medication",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "111908-100",
+                            "display": "0.9 % sodium chloride 0.9 % Intravenous Solution",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                    "valueString": "DDC"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "form": {
+                    "coding": [
+                        {
+                            "code": "HM",
+                            "display": "Intravenous Solution",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                    "valueString": "Good Health Laboratory"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Medication"
+            },
+            "fullUrl": "urn:uuid:dfabc84e-0e51-4b73-aef4-45732c61fed8",
+            "resource": {
+                "resourceType": "Medication",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "111908-100",
+                            "display": "0.9 % sodium chloride 0.9 % Intravenous Solution",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-drug-product-s-d-a-coding-standard",
+                                    "valueString": "DDC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:d2de8ac9-1497-48fe-9c05-2aa857eb880b",
+            "resource": {
+                "resourceType": "Practitioner",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-description",
+                        "valueString": "Test, Good"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-s-d-a-coding-standard",
+                                "valueString": "Good Health Laboratory"
+                            }
+                        ],
+                        "value": "99999999"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Good"
+                        ],
+                        "prefix": [
+                            "DR"
+                        ],
+                        "text": "DR Good Test"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "MedicationRequest"
+            },
+            "fullUrl": "urn:uuid:badd343c-733c-467b-93d7-89e6f3221aba",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "authoredOn": "2014-10-24T20:47:00+04:00",
+                "dispenseRequest": {
+                    "extension": [
+                        {
+                            "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-order-quantity",
+                            "valueString": "50"
+                        }
+                    ],
+                    "quantity": {
+                        "value": 50
+                    }
+                },
+                "dosageInstruction": [
+                    {
+                        "asNeededBoolean": false,
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "code": "ML",
+                                    "extension": [
+                                        {
+                                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                            "valueString": "Good Health Laboratory"
+                                        }
+                                    ],
+                                    "system": "http://www.intersystems.com/fhir/system",
+                                    "unit": "mL",
+                                    "value": 50
+                                }
+                            }
+                        ],
+                        "timing": {
+                            "code": {
+                                "coding": [
+                                    {
+                                        "code": "STAT",
+                                        "display": "STAT"
+                                    }
+                                ],
+                                "text": "STAT"
+                            }
+                        }
+                    }
+                ],
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-confidentiality-code",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "U",
+                                    "display": "Usual control"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-drug-product",
+                        "valueReference": {
+                            "reference": "urn:uuid:dfabc84e-0e51-4b73-aef4-45732c61fed8"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-filler-assigning-authority",
+                        "valueString": "Good Health Laboratory"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-from-time",
+                        "valueDateTime": "2014-10-24T20:39:00+04:00"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-placer-assigning-authority",
+                        "valueString": "Good Health Laboratory"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-route",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "ROA051",
+                                    "display": "intravenous"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/medication-to-time",
+                        "valueDateTime": "2014-10-24T20:39:00+04:00"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "M008322141"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "M008322141"
+                    }
+                ],
+                "intent": "order",
+                "medicationReference": {
+                    "reference": "urn:uuid:ba75ad3c-d71d-43da-b635-3ce1f739d5fc"
+                },
+                "priority": "stat",
+                "requester": {
+                    "reference": "urn:uuid:d2de8ac9-1497-48fe-9c05-2aa857eb880b"
+                },
+                "status": "active",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "MedicationDispense"
+            },
+            "fullUrl": "urn:uuid:1e1044d7-9990-459f-87d2-f6b0a13eabc3",
+            "resource": {
+                "resourceType": "MedicationDispense",
+                "authorizingPrescription": [
+                    {
+                        "reference": "urn:uuid:badd343c-733c-467b-93d7-89e6f3221aba"
+                    }
+                ],
+                "dosageInstruction": [
+                    {
+                        "asNeededBoolean": false,
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "code": "ML",
+                                    "extension": [
+                                        {
+                                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                            "valueString": "Good Health Laboratory"
+                                        }
+                                    ],
+                                    "system": "http://www.intersystems.com/fhir/system",
+                                    "unit": "mL",
+                                    "value": 50
+                                }
+                            }
+                        ],
+                        "timing": {
+                            "code": {
+                                "coding": [
+                                    {
+                                        "code": "STAT",
+                                        "display": "STAT"
+                                    }
+                                ],
+                                "text": "STAT"
+                            }
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "M008322141"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "M008322141"
+                    }
+                ],
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "code": "111908-100",
+                            "display": "0.9 % sodium chloride 0.9 % Intravenous Solution",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-drug-product-s-d-a-coding-standard",
+                                    "valueString": "DDC"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:180091bb-29b7-46c2-86e9-8d5b2587b8fa",
+            "resource": {
+                "resourceType": "Practitioner",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-description",
+                        "valueString": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "value": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "fullUrl": "urn:uuid:db43c762-6502-4092-8b9b-b5c0cbaba02d",
+            "resource": {
+                "resourceType": "Condition",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "problem-list-item",
+                                "display": "Problem List Item",
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+                            }
+                        ],
+                        "text": "Problem List Item"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "R10.84",
+                            "display": "Pain in abdomen",
+                            "system": "http://hl7.org/fhir/sid/icd-10"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/problem-entered-at",
+                        "valueReference": {
+                            "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/problem-entered-by",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine",
+                                    "display": "Allopathic & Osteopathic Physicians; Family Medicine, Adult Medicine"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Stomach pain"
+                    }
+                ],
+                "recordedDate": "2014-10-02T10:30:26+04:00",
+                "recorder": {
+                    "reference": "urn:uuid:180091bb-29b7-46c2-86e9-8d5b2587b8fa"
+                },
+                "subject": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Medication"
+            },
+            "fullUrl": "urn:uuid:354813f3-d3fb-4a8d-8742-395627052c1d",
+            "resource": {
+                "resourceType": "Medication",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "1438-847001-1021",
+                            "display": "PFIZER-BIONTECH COVID-19 VACCINE"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "fullUrl": "urn:uuid:54a50944-a254-4bb0-925f-2feb767ba4b7",
+            "resource": {
+                "resourceType": "Organization",
+                "active": true,
+                "identifier": [
+                    {
+                        "value": "BRHC COV VAC"
+                    }
+                ],
+                "name": "BRHC COV VAC",
+                "partOf": {
+                    "reference": "urn:uuid:cf8dafbf-cf87-446f-90a3-fc8a1bfa7d5f"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Practitioner"
+            },
+            "fullUrl": "urn:uuid:fb69290c-5822-41fb-9e32-161df7f9123b",
+            "resource": {
+                "resourceType": "Practitioner",
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-description",
+                        "valueString": "TEST 2, OP"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-care-provider-s-d-a-coding-standard",
+                                "valueString": "Good Health"
+                            }
+                        ],
+                        "value": "365"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "TEST 2",
+                        "given": [
+                            "OP",
+                            "PHYSICIAN"
+                        ],
+                        "text": "OP PHYSICIAN TEST 2"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "Immunization"
+            },
+            "fullUrl": "urn:uuid:d8b63f1f-1cd5-478e-80aa-925a5fe901e1",
+            "resource": {
+                "resourceType": "Immunization",
+                "doseQuantity": {
+                    "code": "mL",
+                    "system": "http://unitsofmeasure.org",
+                    "unit": "mL",
+                    "value": 0.3
+                },
+                "extension": [
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-confidentiality-code",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "U",
+                                    "display": "Usual control"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-drug-product",
+                        "valueReference": {
+                            "reference": "urn:uuid:354813f3-d3fb-4a8d-8742-395627052c1d"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-duration",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "2Doses",
+                                    "display": "2Doses",
+                                    "extension": [
+                                        {
+                                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-duration-factor",
+                                            "valueString": "2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-entered-by",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "00029384",
+                                    "display": "TEST 2, OP",
+                                    "extension": [
+                                        {
+                                            "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-detail-s-d-a-coding-standard",
+                                            "valueString": "Good Health"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-entered-on",
+                        "valueDateTime": "2022-01-18T10:16:55+04:00"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-entering-organization",
+                        "valueReference": {
+                            "reference": "urn:uuid:54a50944-a254-4bb0-925f-2feb767ba4b7"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-frequency",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "Dose1",
+                                    "display": "Dose1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-from-time",
+                        "valueDateTime": "2022-01-18T10:30:00+04:00"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-ordered-by",
+                        "valueReference": {
+                            "reference": "urn:uuid:fb69290c-5822-41fb-9e32-161df7f9123b"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-placer-assigning-authority",
+                        "valueString": "Good Health"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/vaccination-priority",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "N",
+                                    "display": "Normal"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administered-amount",
+                        "valueString": "0.3"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administered-units",
+                        "valueString": "mL"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administering-provider",
+                        "valueReference": {
+                            "reference": "urn:uuid:fb69290c-5822-41fb-9e32-161df7f9123b"
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administration-notes",
+                        "valueString": "New immunization record"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administration-site",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "LD",
+                                    "display": "Left deltoid"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-administration-status",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "CP",
+                                    "display": "CP"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-expiry-date",
+                        "valueDateTime": "2023-03-18T00:00:00+04:00"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-lot-number",
+                        "valueString": "223344"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-manufacturer-name",
+                        "valueString": "Other manufacturer"
+                    },
+                    {
+                        "url": "http://intersystems.com/fhir/extn/sda3/lib/administration-to-time",
+                        "valueDateTime": "2022-01-18T00:00:00+04:00"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "FILL",
+                                    "display": "Filler Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "FillerId"
+                        },
+                        "use": "official",
+                        "value": "54605"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ],
+                            "text": "PlacerId"
+                        },
+                        "use": "official",
+                        "value": "500799744"
+                    }
+                ],
+                "occurrenceDateTime": "2022-01-18T00:00:00+04:00",
+                "patient": {
+                    "reference": "urn:uuid:2ac77170-47c3-48d6-a22e-2cc67a11cc32"
+                },
+                "recorded": "2022-01-18T10:18:24+04:00",
+                "route": {
+                    "coding": [
+                        {
+                            "code": "ROA012",
+                            "display": "IM"
+                        }
+                    ]
+                },
+                "status": "completed",
+                "vaccineCode": {
+                    "coding": [
+                        {
+                            "code": "1438-847001-1021",
+                            "display": "PFIZER-BIONTECH COVID-19 VACCINE",
+                            "extension": [
+                                {
+                                    "url": "http://intersystems.com/fhir/extn/sda3/lib/code-table-translated-s-d-a-coding-standard",
+                                    "valueString": "DDC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
