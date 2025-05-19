@@ -1,7 +1,7 @@
-# InterOpContest
+# FHIR Bundle to CCDA
 
 ## Overview
-InterOpContest(FHIR Bundle To CCDA) is a comprehensive project designed to facilitate interoperability between various healthcare data standards and formats. The project provides tools and services for converting, processing, and visualizing healthcare data, ensuring seamless integration and communication between different systems.
+FHIR Bundle To CCDA is a comprehensive project designed to facilitate interoperability between various healthcare data standards and formats. The project provides tools and services for converting, processing, and visualizing healthcare data, ensuring seamless integration and communication between different systems.
 
 ## Key Features
 - **FHIR to CCDA Conversion**: Tools to convert FHIR (Fast Healthcare Interoperability Resources) data to CCDA (Consolidated Clinical Document Architecture) format.
