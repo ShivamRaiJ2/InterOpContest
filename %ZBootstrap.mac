@@ -4,6 +4,7 @@ ROUTINE %ZBootstrap
  Write "For Setup press 1, Note it is a one time process",!
  Write "For installing namespace only press 2",!
  Write "For installing webapp only press 3",!
+ Write "For installing user only press 4",!
  Read choice,!
  If choice = 1 {
   Write "Running setup",!
@@ -32,6 +33,8 @@ ROUTINE %ZBootstrap
         Do installwebapp(namespace)
         Write "Fhir web app create for  ",namespace," created"
    }
+ }ElseIf choice = 4 {
+    Do adduser()
  }Else {
     Write "Test",!
     Do Test()
@@ -65,6 +68,8 @@ setup() public { ##; one time initialization
  Set tSC=##class(Ens.Director).StartProduction("INTEROPCONTESTPKG.FoundationProduction")
 
  do installwebapp($NAMESPACE)
+
+ do adduser()
  
  Write "Set up completed successfully",!
 
@@ -96,6 +101,31 @@ installwebapp(namespace) public { ##; install web app
  }
  Write "Created fhir web app ",!
 
+}
+
+adduser() public { ##; add user
+    Set:$NAMESPACE'="%SYS" $NAMESPACE="%SYS"
+    Set Properties("FullName") = "FHIR User"
+		Set Properties("Comment") = "Web Service User"
+		Set Properties("Password") = "SYS"
+		Set Properties("ChangePassword") = 0
+		Set Properties("PasswordNeverExpires") = 1
+		Set Properties("Enabled") = 1
+		Set Properties("ExpirationDate") = ""
+		Set Properties("AccountNeverExpires") = 1
+    Set Properties("EmailAddress") = ""
+    Set tSC = ##class(Security.Users).Create("fhiruser",.Properties)
+    If $$$ISERR(tSC) {
+       Write "Error creating user ",!
+      Quit
+    }
+    Write "Created user ",!
+    Write "Adding roles for user ",!
+    Set tSC = ##class(Security.Users).AddRoles("fhiruser","%HS_DB_INTEROPCONTEST")
+    If $$$ISERR(tSC) {
+       Write "Error adding role for user ",!
+      Quit
+    }
 }
 
 Test() public{
